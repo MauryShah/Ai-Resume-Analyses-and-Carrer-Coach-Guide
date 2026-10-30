@@ -1,0 +1,6 @@
+streamlit
+PyMuPDF
+python-dotenv
+langchain-groq
+langchain-core
+reportlab

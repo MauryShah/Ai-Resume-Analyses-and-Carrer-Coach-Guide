@@ -1,0 +1,29 @@
+
+# Secrets and environment configuration
+.env
+.env.*
+!.env.example
+
+# Python virtual environments
+.venv/
+venv/
+env/
+
+# Python generated files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Test and cache files
+.pytest_cache/
+.streamlit/secrets.toml
+
+# Local uploads and generated reports
+uploads/
+generated_reports/

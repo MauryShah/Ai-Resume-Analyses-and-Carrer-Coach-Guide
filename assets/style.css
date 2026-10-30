@@ -1,0 +1,240 @@
+
+/* =========================================
+   AI RESUME ANALYZER — SHARED STYLESHEET
+   Homepage: white and blue
+   Resume tools: dark theme applied per page
+   ========================================= */
+
+/* 1. Global color palette */
+:root {
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+
+    --page-bg: #f5f8ff;
+    --surface: #ffffff;
+
+    --text-primary: #172033;
+    --text-secondary: #64748b;
+    --border: #e2e8f0;
+
+    --danger: #ff4b4b;
+    --danger-hover: #e53939;
+
+    --dark-bg: #0e1117;
+    --dark-surface: #171923;
+    --dark-input: #262730;
+    --dark-border: #303746;
+    --dark-text: #f1f5f9;
+    --dark-muted: #cbd5e1;
+}
+
+/* 2. Default application background — LIGHT */
+.stApp {
+    background-color: var(--page-bg);
+    color: var(--text-primary);
+}
+
+/* 3. Main content spacing */
+.block-container {
+    max-width: 1100px;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+/* 4. Default page heading — BLUE */
+.page-header {
+    background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+    padding: 2rem;
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+}
+
+.page-header h1,
+.page-header h2 {
+    color: #ffffff;
+    margin-top: 0;
+}
+
+.page-header p {
+    color: #dbeafe;
+    margin-bottom: 0;
+}
+
+/* 5. Homepage cards — WHITE */
+.app-card {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.app-card h3 {
+    color: var(--primary);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.app-card p {
+    color: var(--text-secondary);
+    margin-bottom: 0;
+}
+
+/* 6. Default buttons — BLUE */
+.stButton > button {
+    background-color: var(--primary);
+    color: #ffffff;
+    border: 1px solid var(--primary);
+    border-radius: 9px;
+    font-weight: 600;
+    min-height: 42px;
+    transition: background-color 0.2s ease;
+}
+
+.stButton > button:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    color: #ffffff;
+}
+
+/* 7. Download buttons */
+.stDownloadButton > button {
+    background-color: var(--primary);
+    color: #ffffff;
+    border: 1px solid var(--primary);
+    border-radius: 9px;
+    font-weight: 600;
+    min-height: 42px;
+}
+
+.stDownloadButton > button:hover {
+    background-color: var(--primary-hover);
+    color: #ffffff;
+}
+
+/* 8. Default readable text */
+.stMarkdown,
+[data-testid="stMarkdownContainer"] {
+    color: var(--text-primary);
+}
+
+/* 9. Sidebar — ALWAYS WHITE */
+[data-testid="stSidebar"] {
+    background-color: #ffffff !important;
+    border-right: 1px solid var(--border);
+}
+
+[data-testid="stSidebar"] * {
+    --text-primary: #172033;
+}
+
+/* 10. Upload control — default BLUE */
+[data-testid="stFileUploader"] button {
+    background-color: var(--primary) !important;
+    color: #ffffff !important;
+    border: 1px solid #3b82f6 !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+}
+
+[data-testid="stFileUploader"] button:hover {
+    background-color: var(--primary-hover) !important;
+    color: #ffffff !important;
+}
+
+[data-testid="stFileUploaderDropzone"] {
+    border: 1px dashed #60a5fa;
+    border-radius: 12px;
+}
+
+/* =========================================
+   DARK THEME
+   Add class="dark-page" to the page header
+   to activate the dark page styles.
+   ========================================= */
+
+/* Dark page background */
+.stApp:has(.dark-page),
+.stApp:has(.dark-page) [data-testid="stAppViewContainer"],
+.stApp:has(.dark-page) [data-testid="stMain"] {
+    background-color: var(--dark-bg) !important;
+    color: var(--dark-text) !important;
+}
+
+/* Dark page text */
+.stApp:has(.dark-page) [data-testid="stMain"] h1,
+.stApp:has(.dark-page) [data-testid="stMain"] h2,
+.stApp:has(.dark-page) [data-testid="stMain"] h3,
+.stApp:has(.dark-page) [data-testid="stMain"] h4,
+.stApp:has(.dark-page) [data-testid="stMain"] p,
+.stApp:has(.dark-page) [data-testid="stMain"] label,
+.stApp:has(.dark-page) [data-testid="stMain"] [data-testid="stMarkdownContainer"] {
+    color: var(--dark-text);
+}
+
+/* Dark page header */
+.stApp:has(.dark-page) .page-header {
+    background: var(--dark-surface) !important;
+    border: 1px solid var(--dark-border);
+}
+
+.stApp:has(.dark-page) .page-header h1,
+.stApp:has(.dark-page) .page-header h2 {
+    color: #ffffff !important;
+}
+
+.stApp:has(.dark-page) .page-header p {
+    color: var(--dark-muted) !important;
+}
+
+/* Dark page cards and containers */
+.stApp:has(.dark-page) [data-testid="stVerticalBlockBorderWrapper"] {
+    border-color: var(--dark-border);
+}
+
+/* Dark page upload area */
+.stApp:has(.dark-page) [data-testid="stFileUploader"] {
+    background-color: var(--dark-surface);
+    color: var(--dark-text);
+    border-radius: 12px;
+}
+
+/* Red buttons on dark pages */
+.stApp:has(.dark-page) .stButton > button,
+.stApp:has(.dark-page) .stDownloadButton > button,
+.stApp:has(.dark-page) [data-testid="stFileUploader"] button {
+    background-color: var(--danger) !important;
+    color: #ffffff !important;
+    border: 1px solid var(--danger) !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+}
+
+.stApp:has(.dark-page) .stButton > button:hover,
+.stApp:has(.dark-page) .stDownloadButton > button:hover,
+.stApp:has(.dark-page) [data-testid="stFileUploader"] button:hover {
+    background-color: var(--danger-hover) !important;
+    border-color: var(--danger-hover) !important;
+    color: #ffffff !important;
+}
+
+/* Dark page text inputs */
+.stApp:has(.dark-page) [data-testid="stMain"] input,
+.stApp:has(.dark-page) [data-testid="stMain"] textarea {
+    background-color: var(--dark-input);
+    color: #ffffff;
+    border-color: var(--dark-border);
+}
+
+/* Dark page expanders */
+.stApp:has(.dark-page) [data-testid="stExpander"] {
+    background-color: var(--dark-surface);
+    border-color: var(--dark-border);
+}
+
+/* Keep the navigation sidebar white even on dark pages */
+[data-testid="stSidebar"],
+[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] {
+    background-color: #ffffff !important;
+    color: #172033 !important;
+}
